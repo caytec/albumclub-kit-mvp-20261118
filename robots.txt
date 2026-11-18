@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://caytec.github.io/albumclub-kit-mvp-20261118/sitemap.xml
