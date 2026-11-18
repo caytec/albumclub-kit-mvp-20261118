@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Album Discussion Questions Generator | AlbumClub Kit</title>
+  <meta name="description" content="Create thoughtful album discussion questions, track-by-track prompts, polls, and a shareable listening-club kit in minutes. Free and no signup required.">
+  <link rel="canonical" href="https://caytec.github.io/albumclub-kit-mvp-20261118/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AlbumClub Kit">
+  <meta property="og:title" content="Album Discussion Questions Generator | AlbumClub Kit">
+  <meta property="og:description" content="Build a ready-to-share album listening-club kit with questions, polls, and track prompts.">
+  <meta property="og:url" content="https://caytec.github.io/albumclub-kit-mvp-20261118/">
+  <meta property="og:image" content="https://caytec.github.io/albumclub-kit-mvp-20261118/assets/og.svg">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Album Discussion Questions Generator | AlbumClub Kit">
+  <meta name="twitter:description" content="Create thoughtful album discussion questions, track prompts, polls, and a shareable listening-club kit.">
+  <meta name="twitter:image" content="https://caytec.github.io/albumclub-kit-mvp-20261118/assets/og.svg">
+  <meta name="theme-color" content="#151329">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AlbumClub Kit",
+    "url": "https://caytec.github.io/albumclub-kit-mvp-20261118/",
+    "applicationCategory": "EntertainmentApplication",
+    "operatingSystem": "Web",
+    "description": "A free album discussion questions and listening-club kit generator.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="AlbumClub Kit home">AlbumClub <span>Kit</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#generator">Make a kit</a>
+      <a href="album-discussion-questions.html">Discussion questions</a>
+      <a href="faq.html">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">For listening parties, classrooms, podcasts, and fan groups</p>
+      <h1>Better <span>album discussion questions</span>, ready in minutes.</h1>
+      <p class="lede">Turn an album and tracklist into thoughtful prompts, polls, an agenda, and a shareable discussion card. No account, audio, lyrics, or album facts required.</p>
+      <a class="button primary" href="#generator">Create a free kit</a>
+    </section>
+
+    <section id="generator" class="panel generator" aria-labelledby="generator-title">
+      <div>
+        <p class="eyebrow">Start with what you know</p>
+        <h2 id="generator-title">Build your album club kit</h2>
+        <p class="muted">Your supplied album details are the source of truth. Prompts stay interpretive rather than claiming official artist intent.</p>
+      </div>
+
+      <form id="kit-form" novalidate>
+        <div class="form-grid">
+          <div>
+            <label for="album">Album title</label>
+            <input id="album" name="album" autocomplete="off" maxlength="100" required placeholder="e.g. Midnight Signals">
+          </div>
+          <div>
+            <label for="artist">Artist name</label>
+            <input id="artist" name="artist" autocomplete="off" maxlength="100" required placeholder="e.g. The North Lines">
+          </div>
+        </div>
+
+        <div>
+          <label for="tracks">Tracklist</label>
+          <span id="tracks-hint" class="hint">One track per line, at least 3</span>
+          <textarea id="tracks" name="tracks" aria-describedby="tracks-hint" maxlength="1800" rows="7" required placeholder="Opening Light&#10;Side Street&#10;Afterimage"></textarea>
+        </div>
+
+        <div class="form-grid three">
+          <div>
+            <label for="context">Listening context</label>
+            <select id="context" name="context">
+              <option>Friends</option>
+              <option>Classroom</option>
+              <option>Podcast</option>
+              <option>Fan group</option>
+              <option>Solo reflection</option>
+            </select>
+          </div>
+          <div>
+            <label for="depth">Discussion depth</label>
+            <select id="depth" name="depth">
+              <option>Casual</option>
+              <option selected>Thoughtful</option>
+              <option>Deep dive</option>
+            </select>
+          </div>
+          <div>
+            <label for="groupSize">Group size <span class="hint">optional</span></label>
+            <input id="groupSize" name="groupSize" type="number" inputmode="numeric" min="1" max="999" placeholder="8">
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div>
+            <label for="favorite">Favorite track <span class="hint">optional</span></label>
+            <input id="favorite" name="favorite" autocomplete="off" maxlength="100" placeholder="A track you keep returning to">
+          </div>
+          <div>
+            <label for="least">Least favorite track <span class="hint">optional</span></label>
+            <input id="least" name="least" autocomplete="off" maxlength="100" placeholder="A track that challenged you">
+          </div>
+        </div>
+
+        <div>
+          <label for="impression">First impression <span class="hint">optional</span></label>
+          <textarea id="impression" name="impression" aria-describedby="impression-hint" maxlength="500" rows="3" placeholder="One sentence about how it felt to hear the album."></textarea>
+          <span id="impression-hint" class="hint">Keep it to a sentence or two.</span>
+        </div>
+
+        <label class="check" for="spoilers">
+          <input id="spoilers" name="spoilers" type="checkbox">
+          Spoilers are okay in the discussion
+        </label>
+
+        <button id="generate" class="button primary" type="submit">Generate discussion kit</button>
+        <p id="form-error" class="status error" role="alert" aria-live="assertive"></p>
+        <p id="status" class="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="results" class="results" aria-labelledby="results-title" hidden>
+      <div class="result-head">
+        <div>
+          <p class="eyebrow">Your editable kit</p>
+          <h2 id="results-title" tabindex="-1"></h2>
+          <p id="result-meta" class="muted"></p>
+        </div>
+        <div class="actions">
+          <button id="copyAll" type="button" class="button secondary">Copy all</button>
+          <button id="copyShare" type="button" class="button secondary">Copy share text</button>
+          <button id="download" type="button" class="button secondary">Download card</button>
+          <button id="share" type="button" class="button secondary">Share</button>
+        </div>
+      </div>
+
+      <div id="kit-output"></div>
+
+      <div class="share-link">
+        <label for="result-url">Copy result URL</label>
+        <input id="result-url" readonly>
+      </div>
+
+      <a class="button primary" href="#generator" id="new-kit">Create your own kit</a>
+      <p class="disclaimer">AlbumClub Kit is an unofficial entertainment and discussion aid. It is not affiliated with any artist, label, publisher, or streaming service. Do not submit confidential or unreleased material.</p>
+    </section>
+
+    <section class="sample panel">
+      <p class="eyebrow">A useful starting point</p>
+      <h2>Questions that open a conversation</h2>
+      <div class="sample-grid">
+        <article><strong>Sequence</strong><p>What emotional shift do you hear between the opening track and the next one?</p></article>
+        <article><strong>Personal response</strong><p>Which track would you play for someone new to this artist, and why?</p></article>
+        <article><strong>Group poll</strong><p>Which track was the most surprising on first listen?</p></article>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Album listening-club questions FAQ</h2>
+      <details>
+        <summary>What makes a good album discussion question?</summary>
+        <p>Open-ended questions about sequencing, contrast, mood, production impressions, and personal response give a group room to disagree without requiring trivia or unverified facts.</p>
+      </details>
+      <details>
+        <summary>Can I use AlbumClub Kit without an AI key?</summary>
+        <p>Yes. The browser and server both include a deterministic rules-based fallback, so the core kit remains usable when an AI provider is unavailable.</p>
+      </details>
+      <details>
+        <summary>Does the tool display lyrics or album artwork?</summary>
+        <p>No. The MVP uses only the album information and tracklist you provide and creates a typographic discussion card without lyrics, audio, or automatically sourced artwork.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 AlbumClub Kit · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
